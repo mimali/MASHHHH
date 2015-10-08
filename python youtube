@@ -1,0 +1,17 @@
+import urllib2
+import json
+
+
+def user_input():
+    user_in = raw_input ("Vad vill du titta på? ")
+    return user_in
+
+def get_video():
+    url = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyB75saer8m5Cdp-w6CfrA9cGGm4BlgikX0&part=snippet&maxResults=10&order=title&q=Abba&topicId=abba&type=video&videoCategoryId=Music&videoDefinition=high&videoEmbeddable=true'
+    json_obj = urllib2.urlopen(url)
+    data = json.load(json_obj)
+    for item in data['items']:
+        print item['id']
+
+
+get_video()
