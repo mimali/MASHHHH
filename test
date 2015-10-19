@@ -1,0 +1,16 @@
+import urllib
+import urllib2
+import json
+
+def get_playlist():
+    url = 'https://api.spotify.com/v1/users/familjen_linde/playlists/1pyFg7kbbW62o2rEPdm8Bu/tracks" -H "Accept: application/json" -H "Authorization: Bearer BQBGYqJhkDJw7cSDNhBE9JskOIfcVDs3QbZCzXOxr5QsA2nwiZ_NFFAvdhXHTOiBuRRitgXDXsopKMNPoBAQd6WuKaNfCItJMO5-s3oizfDxQEZg2t-fnclLiNKLHIBeRikqF5yJbwxdGUiq3CdG1K811ChWqnmNewsJt6yIXvbGHEFd65yyUDtIIufur6o8jwIh0nZgUHx8Vnquq05f_FkispwQExBbvUnk2NnS7kh5S6AQhNmrpKU4uYAPbHI'
+    response = urllib2.urlopen(url)
+    json_obj = json.load(response)
+
+
+    grej = json_obj
+    
+    print grej
+
+
+get_playlist()

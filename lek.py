@@ -67,7 +67,7 @@ def set_songs(self, data):
 
 def get_songs(self):
     return self._songs"""
-"""
+
 import urllib2
 import urllib
 import json
@@ -92,9 +92,9 @@ def fetch_track(track_title):
 		Fetches movies from omdb-API, and prints the results (movie titles)
 	'''
 	# Parametes for the API-request
-	parameters = {'s' : track_title, 'r' : 'json'}
+	parameters = {'q' : track_title, 'r' : 'json'}
 	# Fetches the result from the API
-	response = urllib2.urlopen('https://api.spotify.com/v1/search?q=%s&type=track,artist')
+	response = urllib2.urlopen('https://api.spotify.com/v1/tracks/{id}')
 	# Parse the result as JSON
 	tracks = json.loads(response.read())
 	
@@ -109,7 +109,8 @@ def fetch_track(track_title):
 		# Prints the movie in the console/terminal
 		print "Songs: " + track['Title']
 	
-init()"""
+init()
+"""
 
 
 def search_song(title, artist):
@@ -124,4 +125,4 @@ def search_song(title, artist):
         return None
 
 
-search_song()
+search_song()"""

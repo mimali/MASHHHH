@@ -1,0 +1,43 @@
+# -*- coding: cp1252 -*-
+import urllib2
+import json
+
+
+def user_input():
+    user_in = raw_input ("Vad vill du titta på? ")
+    return user_in
+
+def get_video():
+    #url till api
+    url = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyB75saer8m5Cdp-w6CfrA9cGGm4BlgikX0&part=snippet&maxResults=10&order=title&q=kidcudi&topicId=abba&type=video&videoCategoryId=Music&videoDefinition=high&videoEmbeddable=true'
+    
+    json_obj = urllib2.urlopen(url)
+    data = json.load(json_obj)
+    #items är listan som innehåller dict snippet som innehåller title.
+    #items är listan som innehåller dict id som innehåller videoId.
+    title=data['items'][0]['snippet']['title']
+    movie_id=data['items'][0]['id']['videoId']
+    #Skriver ut title på klippet och dess Youtube ID.
+    print "Titel på klippet: ", title
+    print "Klippets ID: ", movie_id
+
+get_video()
+
+#
+'''
+Lite söknings alternativ till API
+
+part=snippet
+&maxResults=10
+&order=title
+&q=Abba # den viktigaste för att kunna söka på youtube. 
+&topicId=abba
+&type=video
+&videoCategoryId=Music
+&videoDefinition=high
+&videoEmbeddable=true
+
+API url = https://www.googleapis.com/youtube/v3/search?
+
+API_key = 'AIzaSyB75saer8m5Cdp-w6CfrA9cGGm4BlgikX0'
+'''
