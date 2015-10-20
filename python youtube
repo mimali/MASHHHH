@@ -1,33 +1,57 @@
 # -*- coding: cp1252 -*-
 import urllib2
+import urllib
 import json
 
+#funktion som startar allt.
+def start ():
+    user_in = user_input()
+    get_video(user_in)
 
+#Frågar efter vilken film användaren vill se.
 def user_input():
     user_in = raw_input ("Vad vill du titta på? ")
     return user_in
 
-def get_video():
-    #url till api
-    url = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyB75saer8m5Cdp-w6CfrA9cGGm4BlgikX0&part=snippet&maxResults=10&order=title&q=kidcudi&topicId=abba&type=video&videoCategoryId=Music&videoDefinition=high&videoEmbeddable=true'
-    
-    json_obj = urllib2.urlopen(url)
+#Hämtar filmen
+def get_video(user_in):
+    #HTTP api från Youtube, med en api key och snippet.
+    url = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyB75saer8m5Cdp-w6CfrA9cGGm4BlgikX0&part=snippet&'
+    #Parametrar som filtrerar sökningen.'q'=vad användaren vill söka på.
+    parameters ={'order' : 'relevance','q': user_in, 'type' : 'video', 'maxResults' : '2', 'videoSyndicated' : 'True', 'topicId' : 'Music video'}
+    #Ska nog ta bort detta. Gör om parameters till en string med urlencodes
+    apa = urllib.urlencode(parameters)
+    #Slår ihop till en http url med alla parametrar
+    url_serch = url + apa
+    #Öppnar upp API med urllib2
+    json_obj = urllib2.urlopen(url_serch)
+    #Laddar i ett json format
     data = json.load(json_obj)
-    #items är listan som innehåller dict snippet som innehåller title.
-    #items är listan som innehåller dict id som innehåller videoId.
+
+    #Skriver ut hela svaret 
+    print data
+    print "-"*30
+
+    #Loopar igenom svaret Item -> snippet -> title
     title=data['items'][0]['snippet']['title']
+    #Loopar igenom svaret Item -> id -> videoId
     movie_id=data['items'][0]['id']['videoId']
+    
     #Skriver ut title på klippet och dess Youtube ID.
     print "Titel på klippet: ", title
+    print"-"*30
     print "Klippets ID: ", movie_id
 
-get_video()
 
-#
-'''
-Lite söknings alternativ till API
+start()
 
-part=snippet
+
+''''
+-------------------------------------------
+Parametrar som kan användas för att söka
+-------------------------------------------
+part=snippet #MÅste vara med.
+.............................
 &maxResults=10
 &order=title
 &q=Abba # den viktigaste för att kunna söka på youtube. 
@@ -36,8 +60,9 @@ part=snippet
 &videoCategoryId=Music
 &videoDefinition=high
 &videoEmbeddable=true
-
+--------------------------------------------------------
 API url = https://www.googleapis.com/youtube/v3/search?
-
+--------------------------------------------------------
 API_key = 'AIzaSyB75saer8m5Cdp-w6CfrA9cGGm4BlgikX0'
+--------------------------------------------------------
 '''
