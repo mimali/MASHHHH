@@ -1,4 +1,40 @@
 body{
-	background-color; green:
-	background: url(oldTV.png);
+	background-color: #FFF;
+}
+#wrapper{
+	height: 100%;
+	width: 95%;
+}
+
+#TVn{
+	background: url(oldTV.png) no-repeat center center;
+    color: black;
+	text-align:center;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    margin: auto;
+    margin-top: 10px;
+    height: 700px;
+    width: 1000px;
+}
+
+#rubrik{
+	position: fixed;
+    top: 280px;
+    right: 54%;
+}
+
+#search{
+	position: fixed;
+    top: 320px;
+    right: 53%;
+}
+#playlist{
+	position: fixed;
+    top: 280px;
+    right: 54%;
 }
