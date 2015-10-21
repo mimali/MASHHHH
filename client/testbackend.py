@@ -2,5 +2,5 @@
 
 
 def skicka(req):
-    sant = str(req) + 'knas'
+    sant = '***' + str(req) + '***'
     return sant
