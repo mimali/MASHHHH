@@ -31,13 +31,13 @@ def search_artist():
 
 
 
-for i in grej:
-    lista.append(i)
-    
-for j in lista:
-    L1.append(j['id'])
-    print L1
-   
+    for i in grej:
+        lista.append(i)
+        
+    for j in lista:
+        L1.append(j['id'])
+        print L1
+       
 
 def get_artist():
    
