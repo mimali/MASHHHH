@@ -7,6 +7,7 @@ import sys
 
 lista=[]
 L1=[]
+L2=[]
 Ylist=[]
 
 def search_artist(req):
@@ -35,5 +36,5 @@ def search_artist(req):
 
     
         
-        return L1
+        return L1,L2
         
