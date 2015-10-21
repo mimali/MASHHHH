@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from bottle import *
-from testbackend import skicka
+from getartiskt import get_playlist
 HOST = "localhost"
 
 @route("/static/<filepath:path>")
@@ -21,7 +21,7 @@ def get_request():
     ett tempalte med en rubrik som Ã¤r playlisten
     """
     req = request.forms.req
-    return template('playlist', req = skicka(req))
+    return template('playlist', req = get_playlist(req))
 
 '''
 @error(404)
