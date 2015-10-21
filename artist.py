@@ -6,32 +6,14 @@ import spotipy
 import sys
 
 def search_artist():
-<<<<<<< HEAD
 #tror ej denna funktion kommer vara h‰r i backenden men nu testas de bara lite
-
-    vem = raw_input('vilken artist vill du sˆka pÂ? ')
-    #name.replace(" ", "+")
-    searchLink = "https://api.spotify.com/v1/search?q=%s&type=artist" %name
-    artistPage = requests.get(searchLink)
-    artist = artistPage.json()
-    artist = artist['artists']
-    artistInfo = artist['items']
-    artistInfo = artistInfo[0]
-    artistID = artistInfo['id']
-    #print artistID
-    return artistID
-    
-
-
-def get_artist():
-   
-#h‰mtar en artists top 10 lÂtar, just nu ‰r det med ett fˆrbest‰mmt artistID
-=======
-#tror ej denna funktion kommer vara h√§r i backenden men nu testas de bara lite
-"""
     url = "https://api.spotify.com/v1/search?"
-    art = (raw_input(u'vilken artist vill du s√∂ka p√•? '))
+    art = (raw_input(u'vilken artist vill du sˆka pÂ? '))
     ist = '&type=artist&limit=5" -H "Accept: application/json"' 
+
+    #'https://api.spotify.com/v1/search?q=lady+gaga&type=artist&limit=5" -H "Accept: application/json"'
+
+
 
     parameters = {'q' : art, 'type' : 'artist', 'limit' : '1', 'accept' : 'application/json'}
     response = urllib2.urlopen(url + urllib.urlencode(parameters))
@@ -49,18 +31,18 @@ def get_artist():
 
 
 
-    for i in grej:
-        lista.append(i)
-        
-    for j in lista:
-        L1.append(j['id'])
-        print L1
-"""
+for i in grej:
+    lista.append(i)
+    
+for j in lista:
+    L1.append(j['id'])
+    print L1
+   
 
 def get_artist():
    
-#h√§mtar en artists top 10 l√•tar, just nu √§r det med ett f√∂rbest√§mmt artistID
->>>>>>> b40edf2441638d77f5d5b6e6db1c4360695153e1
+#h‰mtar en artists top 10 l√•tar, just nu √§r det med ett f√∂rbest√§mmt artistID
+
 
     lz_uri = 'spotify:artist:5vBSrE1xujD2FXYRarbAXc'
 
