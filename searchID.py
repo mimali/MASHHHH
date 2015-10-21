@@ -31,5 +31,5 @@ for i in grej:
     
 for j in lista:
     L1.append(j['id'])
-    print L1
-   
+    j = artistID
+    print artistID

@@ -19,17 +19,11 @@ def search_artist():
     response = urllib2.urlopen(url + urllib.urlencode(parameters))
 
     json_obj = json.load(response)
-    #print json_obj
-     
-
-
     grej = json_obj['artists']['items']
-    #print grej
+    
 
     lista=[]
     L1=[]
-
-
 
     for i in grej:
         lista.append(i)
@@ -37,11 +31,12 @@ def search_artist():
     for j in lista:
         L1.append(j['id'])
         print L1
+        
        
 
 def get_artist():
    
-#hämtar en artists top 10 lÃ¥tar, just nu Ã¤r det med ett fÃ¶rbestÃ¤mmt artistID
+#hämtar den valda artistens top 10 låtar på spotify
 
 
     lz_uri = 'spotify:artist:5vBSrE1xujD2FXYRarbAXc'
