@@ -10,8 +10,8 @@ body{
 Svart bakgrund på playlist templatet
 */
 #TVn{
-	background: url(oldTV.png) no-repeat center center;
-    color: black;
+	background: url(oldTVblack.png) no-repeat center center;
+    color: white;
 	text-align:center;
 
     -webkit-background-size: cover;
@@ -22,7 +22,7 @@ Svart bakgrund på playlist templatet
     margin: auto;
     margin-top: 10px;
     height: 700px;
-    width: 1000px;
+    width: 1050px;
 }
 /*
 alla divarna com är i TVn, rubriken, searchfältet och viedon
@@ -32,22 +32,30 @@ artistnamnet ändras är det ändå centrerat i TVn.
 */
 
 #rubrik{
+    position: relative;
+    top: 110px;
+    left: 70px;
 	
 }
 
 #search{
+    position: relative;
+    top: 110px;
+    left: 70px;
 	
 }
 
 #playlist{
-	
+	position: relative;
+    top: 80px;
+    right: 20px;
 }
 
 #video{
     height: 362px;
     width: 442px;
     position: relative;
-    top: 90px;
-    left: 70px;
+    top: 115px;
+    left: 105px;
     
 }
