@@ -16,10 +16,6 @@ def search_artist():
     req = (raw_input(u'vilken artist vill du söka på? '))
     ist = '&type=artist&limit=5" -H "Accept: application/json"' 
 
-    #'https://api.spotify.com/v1/search?q=lady+gaga&type=artist&limit=5" -H "Accept: application/json"'
-
-
-
     parameters = {'q' : req, 'type' : 'artist', 'limit' : '1', 'accept' : 'application/json'}
     response = urllib2.urlopen(url + urllib.urlencode(parameters))
 
@@ -38,14 +34,12 @@ def search_artist():
     for k in grej:
         L2 = k['name']
         
-        print L2
+        #print L2
+        #print L1
+       
+        get_artist(L1,L2)
 
-
-        
-"""        
-        get_artist(L1)
-
-def get_artist(L1):
+def get_artist(L1,L2):
    
 #hämtar den valda artistens top 10 låtar på spotify
     print L1
@@ -58,23 +52,22 @@ def get_artist(L1):
     for track in results['tracks'][:10]:
             
             #print('track   : ' + track['name'])
-            print('audio   : ' + track['preview_url'])
-            print('cover art: ' + track['album']['images'][0]['url'])
+            #print('audio   : ' + track['preview_url'])
+            #print('cover art: ' + track['album']['images'][0]['url'])
             print"*****************************"
 
-            Ylist = track['name']
+            Ylist = track['name'] , str(L2)
 
-            print L1
+        
+           
             print Ylist
-            #return Ylist
+            
 
-            Simon= []
             
             
 
             
 
     
-"""
 search_artist()
 
