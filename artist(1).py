@@ -23,7 +23,6 @@ def search_artist():
     response = urllib2.urlopen(url + urllib.urlencode(parameters))
 
     json_obj = json.load(response)
-    print json_obj
     grej = json_obj['artists']['items']
     
 
@@ -49,18 +48,14 @@ def get_artist(L1):
     for track in results['tracks'][:10]:
             
             #print('track   : ' + track['name'])
-            print('audio   : ' + track['preview_url'])
-            print('cover art: ' + track['album']['images'][0]['url'])
+            #print('audio   : ' + track['preview_url'])
+            #print('cover art: ' + track['album']['images'][0]['url'])
             print"*****************************"
-
             Ylist = track['name']
-
-            print L1
             print Ylist
             #return Ylist
 
             Simon= []
-            
             
 
             
