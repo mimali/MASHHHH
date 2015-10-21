@@ -19,8 +19,6 @@ def search_artist(req):
     response = urllib2.urlopen(url + urllib.urlencode(parameters))
 
     json_obj = json.load(response)
-    print json_obj
-    
     grej = json_obj['artists']['items']
     
 
@@ -30,6 +28,10 @@ def search_artist(req):
         
     for j in lista:
         L1 = j['id']
+
+    
+    for k in grej:
+        L2 = k['name']
 
     
         

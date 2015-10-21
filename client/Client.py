@@ -24,13 +24,13 @@ def get_request1():
     L1 = search_artist(req)
     return L1, get_request2(L1)
 
-@route('/playlist/<L1>', method="POST")
-def get_request2(L1):
+@route('/playlist/<L2>', method="POST")
+def get_request2(L2):
     """hÃ¤mtar in svaret som anvÃ¤ndaren skrivier in i playlist och retunar ett 
     ett tempalte med en rubrik som Ã¤r playlisten
     """
     req = request.forms.req
-    return template('playlist', L1 = L1)
+    return template('playlist', L2 = L2)
 
 '''
 @error(404)
