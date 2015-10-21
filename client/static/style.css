@@ -1,11 +1,14 @@
 body{
 	background-color: #FFF;
+
 }
 #wrapper{
 	height: 100%;
 	width: 95%;
 }
-
+/*
+Svart bakgrund på playlist templatet
+*/
 #TVn{
 	background: url(oldTV.png) no-repeat center center;
     color: black;
@@ -21,20 +24,30 @@ body{
     height: 700px;
     width: 1000px;
 }
+/*
+alla divarna com är i TVn, rubriken, searchfältet och viedon
+behövere vara lika breda. De måste vara positionerade på samma ställe 
+och texten innuti måste vara centrerad. Så att även om texten i, typ 
+artistnamnet ändras är det ändå centrerat i TVn.
+*/
 
 #rubrik{
-	position: fixed;
-    top: 280px;
-    right: 54%;
+	
 }
 
 #search{
-	position: fixed;
-    top: 320px;
-    right: 53%;
+	
 }
+
 #playlist{
-	position: fixed;
-    top: 280px;
-    right: 54%;
+	
+}
+
+#video{
+    height: 362px;
+    width: 442px;
+    position: relative;
+    top: 90px;
+    left: 70px;
+    
 }
