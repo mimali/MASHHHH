@@ -1,4 +1,5 @@
 body{
+    font-family: Helvetica, Verdana, Arial, sans-serif;
 	background-color: #FFF;
 
 }
@@ -10,7 +11,7 @@ body{
 Svart bakgrund på playlist templatet
 */
 #TVn{
-	background: url(oldTVblack.png) no-repeat center center;
+	background: url(oldTV.png) no-repeat center center;
     color: white;
 	text-align:center;
 
@@ -32,23 +33,39 @@ artistnamnet ändras är det ändå centrerat i TVn.
 */
 
 #rubrik{
+    font-size: 80px;
+    text-align: center;
+    height: 100px;
+    width: 700px;
     position: relative;
-    top: 110px;
+    top: 160px;
     left: 70px;
-	
 }
 
 #search{
+    font-size: 80px;
+    text-align: center;
     position: relative;
-    top: 110px;
+    height: 200px;
+    width: 700px;
+    top: 160px;
     left: 70px;
-	
 }
 
-#playlist{
-	position: relative;
-    top: 80px;
-    right: 20px;
+form input[type="text"] {
+    font-size: 50px;
+    height: 80px;
+    width: 500px;
+    font-family: Helvetica, Verdana, Arial, sans-serif;
+}
+
+#artist{
+    text-align: center;
+    position: relative;
+    height: 30px;
+    width: 700px;
+    top: 100px;
+    left: 75px;
 }
 
 #video{
@@ -58,4 +75,14 @@ artistnamnet ändras är det ändå centrerat i TVn.
     top: 115px;
     left: 105px;
     
+}
+
+#playlist{
+    font-size: 13px;
+    font-weight: bold;
+    color: black;
+    position: relative;
+    left: 385px;
+    top: -369px;
+
 }
