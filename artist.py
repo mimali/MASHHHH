@@ -7,6 +7,7 @@ import sys
 
 lista=[]
 L1=[]
+L2=[]
 Ylist=[]
 
 def search_artist():
@@ -23,7 +24,7 @@ def search_artist():
     response = urllib2.urlopen(url + urllib.urlencode(parameters))
 
     json_obj = json.load(response)
-    print json_obj
+    #print json_obj
     grej = json_obj['artists']['items']
     
 
@@ -33,7 +34,15 @@ def search_artist():
         
     for j in lista:
         L1 = j['id']
+
+    for k in grej:
+        L2 = k['name']
         
+        print L2
+
+
+        
+"""        
         get_artist(L1)
 
 def get_artist(L1):
@@ -66,6 +75,6 @@ def get_artist(L1):
             
 
     
-
+"""
 search_artist()
 
