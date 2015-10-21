@@ -5,6 +5,9 @@ import json
 import spotipy
 import sys
 
+lista=[]
+L1=[]
+
 def search_artist():
 #tror ej denna funktion kommer vara här i backenden men nu testas de bara lite
     url = "https://api.spotify.com/v1/search?"
@@ -22,25 +25,24 @@ def search_artist():
     grej = json_obj['artists']['items']
     
 
-    lista=[]
-    L1=[]
 
     for i in grej:
         lista.append(i)
         
     for j in lista:
-        L1.append(j['id'])
-        print L1
+        L1 = j['id']
         
-       
+        get_artist(L1)
 
-def get_artist():
+def get_artist(L1):
    
 #hämtar den valda artistens top 10 låtar på spotify
+    print L1
 
-
-    lz_uri = 'spotify:artist:5vBSrE1xujD2FXYRarbAXc'
-
+    lz_uri = 'spotify:artist:' + str(L1)
+    #print lz_uri
+    
+    
 
 
     spotify = spotipy.Spotify()
@@ -49,10 +51,9 @@ def get_artist():
 
     for track in results['tracks'][:10]:
             print('track    : ' + track['name'])
-            #print('audio    : ' + track['preview_url'])
-            #print('cover art: ' + track['album']['images'][0]['url'])
+            print('audio    : ' + track['preview_url'])
+            print('cover art: ' + track['album']['images'][0]['url'])
             print"*****************************"
 
 search_artist()
-get_artist()
 
