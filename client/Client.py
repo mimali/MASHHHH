@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from bottle import *
+from testbackend import skicka
 from spotifybackend import search_artist
 HOST = "localhost"
 
@@ -11,26 +12,37 @@ def server_static(filepath):
    
 @route('/')
 def start(): 
-    """kÃ¶r bara index templatet
+    """
+    kÃ¶r bara index templatet
     """
     return template('index')
 
+@route('/search')
+def search_artist():
+    print request.query.artist
+
 @route('/playlist', method="POST")
 def get_request1():
-    """hÃ¤mtar in svaret som anvÃ¤ndaren skrivier in i playlist och retunar ett 
+    """
+    hÃ¤mtar in svaret som anvÃ¤ndaren skrivier in i playlist och retunar ett 
     ett tempalte med en rubrik som Ã¤r playlisten
     """
     req = request.forms.req
-    L1 = search_artist(req)
-    return L1, get_request2(L1)
+    L1 = skicka(req)
+    get_request2(req)
 
-@route('/playlist/<L2>', method="POST")
-def get_request2(L2):
-    """hÃ¤mtar in svaret som anvÃ¤ndaren skrivier in i playlist och retunar ett 
+"""kan vi köra den funktionen efter utan fast än vi inte deffinierat req?
+Hur får vi med req i urln?
+"""
+
+@route('/playlist/<req>', method="POST")
+def get_request2(req):
+    """
+    hÃ¤mtar in svaret som anvÃ¤ndaren skrivier in i playlist och retunar ett 
     ett tempalte med en rubrik som Ã¤r playlisten
     """
     req = request.forms.req
-    return template('playlist', L2 = L2)
+    return template('playlist', req = L2)
 
 '''
 @error(404)
