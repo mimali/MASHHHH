@@ -26,7 +26,7 @@ def search_artist():
     i det här fallet artist. Men vad ska den returna?!?!?
     spllistan från spotify, länken till youtube, länken till spotify, kankse
     en bild och artistens namn såklart. Sen måsta man kunna få det i json om man
-    vill
+    vill. Ska allt det här vara i samma funktion?
     """
 
 @route('/playlist', method="POST")
