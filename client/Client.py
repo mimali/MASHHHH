@@ -20,6 +20,11 @@ def start():
 @route('/search')
 def search_artist():
     print request.query.artist
+    """queryn här ifrån söker i spotify och returnerar json eller ett emplate
+    när man går till local host och anropar funktionen /search kan man skriva en
+    quesry med ett ? och sedan skickar man in parametern som vi bestämmer i det
+    i det här fallet artist.
+    """
 
 @route('/playlist', method="POST")
 def get_request1():
