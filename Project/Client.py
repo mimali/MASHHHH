@@ -5,6 +5,7 @@ from testbackend import skicka
 from spotifybackend import search_artist
 HOST = "localhost"
 
+
 @route("/static/<filepath:path>")
 def server_static(filepath):
     """CSS"""
@@ -19,8 +20,10 @@ def start():
 
 @route('/search')
 def search_artist():
+    global artist
     artist = request.query.artist
-    """queryn här ifrån söker i spotify och returnerar json eller ett emplate
+    """
+    queryn här ifrån söker i spotify och returnerar json eller ett emplate
     när man går till local host och anropar funktionen /search kan man skriva en
     quesry med ett ? och sedan skickar man in parametern som vi bestämmer i det
     i det här fallet artist. Men vad ska den returna?!?!?
@@ -28,11 +31,19 @@ def search_artist():
     en bild och artistens namn såklart. Sen måsta man kunna få det i json om man
     vill. Ska allt det här vara i samma funktion?
     """
-    #redirect('search/playlist/')
+    
+    if request.headers.get('Accept') == "application/json":
+        response.set_header("Content-Type", "application/json")
+        return json.dumps(artist, 'json')
+    else:
+        return artist, u' är bra'
 
-@route('search/playlist/')
+@route('search/playlist/<artist>')
 def playlist(artist):
-    return artist
+    """
+    asså jag fattar inte hur man ska köra en sån här funktion med artist i URLn
+    """
+    return 'hej'
 
 @route('/playlist', method="POST")
 def get_request1():
