@@ -19,7 +19,7 @@ def start():
 
 @route('/search')
 def search_artist():
-    print request.query.artist
+    artist = request.query.artist
     """queryn här ifrån söker i spotify och returnerar json eller ett emplate
     när man går till local host och anropar funktionen /search kan man skriva en
     quesry med ett ? och sedan skickar man in parametern som vi bestämmer i det
@@ -28,6 +28,12 @@ def search_artist():
     en bild och artistens namn såklart. Sen måsta man kunna få det i json om man
     vill. Ska allt det här vara i samma funktion?
     """
+    redirect('search/playlist/')
+    
+
+@route('search/playlist/')
+def playlist(artist):
+    return artist
 
 @route('/playlist', method="POST")
 def get_request1():
