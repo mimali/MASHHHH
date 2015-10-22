@@ -23,7 +23,10 @@ def search_artist():
     """queryn här ifrån söker i spotify och returnerar json eller ett emplate
     när man går till local host och anropar funktionen /search kan man skriva en
     quesry med ett ? och sedan skickar man in parametern som vi bestämmer i det
-    i det här fallet artist.
+    i det här fallet artist. Men vad ska den returna?!?!?
+    spllistan från spotify, länken till youtube, länken till spotify, kankse
+    en bild och artistens namn såklart. Sen måsta man kunna få det i json om man
+    vill
     """
 
 @route('/playlist', method="POST")
