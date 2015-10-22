@@ -28,8 +28,7 @@ def search_artist():
     en bild och artistens namn såklart. Sen måsta man kunna få det i json om man
     vill. Ska allt det här vara i samma funktion?
     """
-    redirect('search/playlist/')
-    
+    #redirect('search/playlist/')
 
 @route('search/playlist/')
 def playlist(artist):
