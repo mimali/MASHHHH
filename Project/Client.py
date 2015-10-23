@@ -6,6 +6,42 @@ from spotifybackend import search_artist
 HOST = "localhost"
 
 
+@route('/search')
+def search_artist():
+    """
+    queryn här ifrån söker i spotify och returnerar json eller ett emplate
+    när man går till local host och anropar funktionen /search kan man skriva en
+    quesry med ett ? och sedan skickar man in parametern som vi bestämmer i det
+    i det här fallet artist.
+    """
+    artist = request.query.artist
+    
+    """
+    i den här funktionen får den ju då hämta spllistan från spotify,
+    länken till youtube, länken till spotify och kankse
+    en bild och artistens från apierna och returna. Frågan är hur den ska returna det
+    som listor och dictionaries som är enkelt att översätta till json eller som helt
+    vanlig text
+    """
+    if request.headers.get('Accept') == "application/json":
+        response.set_header("Content-Type", "application/json")
+        return json.dumps(artist, ' json')
+    else:
+        #redirect('search/playlist/<artist>')
+        return artist, u' är bra'
+
+@route('search/playlist/<artist>')
+def playlist(artist):
+    """
+    asså jag fattar inte hur man ska köra en sån här funktion med artist i URLn
+    """
+    return 'hej'
+
+"""
+vi kanske ska lägga allt här nedanför i en egen pythonfil och kalla den klient
+och allt här ovanför, som routar apiet för backend
+"""
+
 @route("/static/<filepath:path>")
 def server_static(filepath):
     """CSS"""
@@ -17,33 +53,6 @@ def start():
     kÃ¶r bara index templatet
     """
     return template('index')
-
-@route('/search')
-def search_artist():
-    global artist
-    artist = request.query.artist
-    """
-    queryn här ifrån söker i spotify och returnerar json eller ett emplate
-    när man går till local host och anropar funktionen /search kan man skriva en
-    quesry med ett ? och sedan skickar man in parametern som vi bestämmer i det
-    i det här fallet artist. Men vad ska den returna?!?!?
-    spllistan från spotify, länken till youtube, länken till spotify, kankse
-    en bild och artistens namn såklart. Sen måsta man kunna få det i json om man
-    vill. Ska allt det här vara i samma funktion?
-    """
-    
-    if request.headers.get('Accept') == "application/json":
-        response.set_header("Content-Type", "application/json")
-        return json.dumps(artist, 'json')
-    else:
-        return artist, u' är bra'
-
-@route('search/playlist/<artist>')
-def playlist(artist):
-    """
-    asså jag fattar inte hur man ska köra en sån här funktion med artist i URLn
-    """
-    return 'hej'
 
 @route('/playlist', method="POST")
 def get_request1():
