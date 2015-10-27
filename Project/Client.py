@@ -3,13 +3,15 @@
 from bottle import *
 from testbackend import skicka
 from spotifybackend import search_artist
+import json
 HOST = "localhost"
 
 
 @route('/search')
 def search_artist():
     """
-    queryn här ifrån söker i spotify och returnerar json eller ett emplate
+    queryn här ifrån sparas i artist som sedan söker i spotify och returnerar
+    json, om man vill det eller ett template
     när man går till local host och anropar funktionen /search kan man skriva en
     quesry med ett ? och sedan skickar man in parametern som vi bestämmer i det
     i det här fallet artist.
@@ -25,17 +27,20 @@ def search_artist():
     """
     if request.headers.get('Accept') == "application/json":
         response.set_header("Content-Type", "application/json")
-        return json.dumps(artist, ' json')
+        return json.dumps(artist + ' json')
     else:
-        #redirect('search/playlist/<artist>')
-        return artist, u' är bra'
+        redirect('/search/playlist/'+artist)
+        #return artist, u' är bra'
 
-@route('search/playlist/<artist>')
+@route('/search/playlist/<artist>')
 def playlist(artist):
     """
     asså jag fattar inte hur man ska köra en sån här funktion med artist i URLn
     """
     return 'hej'
+
+
+
 
 """
 vi kanske ska lägga allt här nedanför i en egen pythonfil och kalla den klient
