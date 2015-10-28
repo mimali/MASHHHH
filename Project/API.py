@@ -29,9 +29,9 @@ def search_artist():
         response.set_header("Content-Type", "application/json")
         return json.dumps(artist + ' json')
     else:
-        redirect ('/playlist/artist/'+artist)
+        redirect ('/playlist/'+artist)
 
-@route('/playlist/artist/<artist>')
+@route('/playlist/<artist>')
 def playlist(artist):
     """
     asså jag fattar inte hur man ska köra en sån här funktion med artist i URLn
