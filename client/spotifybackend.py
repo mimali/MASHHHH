@@ -20,6 +20,7 @@ def search_artist(req):
     response = urllib2.urlopen(url + urllib.urlencode(parameters))
 
     json_obj = json.load(response)
+    
     grej = json_obj['artists']['items']
     
 
