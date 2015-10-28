@@ -7,9 +7,9 @@ import sys
 
 
 def search_artist():
-#tror ej denna funktion kommer vara h�r i backenden men nu testas de bara lite
+#tror ej denna funktion kommer vara här i backenden men nu testas de bara lite
     url = "https://api.spotify.com/v1/search?"
-    req = (raw_input(u'vilken artist vill du s�ka p�? '))
+    req = (raw_input(u'vilken artist vill du söka på? '))
     
     parameters = {'q' : req, 'type' : 'artist', 'limit' : '1', 'accept' : 'application/json'}
     response = urllib2.urlopen(url + urllib.urlencode(parameters))
@@ -34,7 +34,7 @@ def search_artist():
 
 def get_artist(L1,L2,req):
    
-#h�mtar den valda artistens top 10 l�tar p� spotify
+#hämtar den valda artistens top 10 låtar på spotify
     Tracklist=[]
 
     Urllist = []
@@ -53,12 +53,17 @@ def get_artist(L1,L2,req):
             
             
     make_dict(Tracklist,Urllist,req)
-    
+    '''
+    Kör youtube funktionen här  Tracklist= låtnamn req= artist
+    Som kör return youtube URL + videoID
+    '''
         
 def make_dict(Tracklist, Urllist,req):
     #print Tracklist
     #print Urllist
-
+'''
+Lägg till lista(Dict) med youtube länk + vidoeID
+'''
     playlist=dict()
     songs =dict()
     playlist['artist'] = req
