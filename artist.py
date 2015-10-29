@@ -53,36 +53,59 @@ def get_artist(L1,L2,req):
             
             
     make_dict(Tracklist,Urllist,req)
-    '''
-    Kör youtube funktionen här  Tracklist= låtnamn req= artist
-    Som kör return youtube URL + videoID
-    '''
+def get_video(Tracklist, req, Urllist):
+    url = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyB75saer8m5Cdp-w6CfrA9cGGm4BlgikX0&part=snippet&'
+    video_id = []
+    youtube_url = []
+    
+    for track in Tracklist:
         
-def make_dict(Tracklist, Urllist,req):
+        parameters ={'order' : 'viewCount','q': req + track, 'type' : 'video', 'maxResults': '1' , 'topicId' : 'Music video'}
+        url_serch = url + urllib.urlencode(parameters)
+        json_obj = urllib2.urlopen(url_serch)
+        
+        data = json.load(json_obj)
+        movie_id=data['items'][0]['id']['videoId']
+        
+        video_id.append(movie_id)   
+
+    for movie_id in video_id:
+        
+       youtubeurl = 'https://www.youtube.com/watch?'
+       parameters2 = {'v' : movie_id}
+       compyoutubeURL= youtubeurl + urllib.urlencode(parameters2)
+       youtube_url.append(compyoutubeURL)
+
+    
+    make_dict(Tracklist, Urllist, video_id, youtube_url, req)
+    
+def make_dict(Tracklist, Urllist, video_id, youtube_url, req):
     #print Tracklist
     #print Urllist
-'''
-Lägg till lista(Dict) med youtube länk + vidoeID
-'''
+
     playlist=dict()
     songs =dict()
+    
     playlist['artist'] = req
     playlist['songs'] = songs
 
     for i in Tracklist:
-        songs[i]={'spotify':'', 'Youtube': ''}
+        songs[i]={'spotify':'', 'Youtube': '',}
+        
         
     #print playlist['songs']
     m = 0
     for i in playlist['songs']:
         playlist['songs'][i]['spotify']=Urllist[m]
+        playlist['songs'][i]['Youtube']=youtube_url[m]
+        playlist['songs'][i]['YoutubeID']=video_id[m]
         m = m + 1
         
     print playlist
+
     
+search_artist()
 
-
-            
 
     
 search_artist()
