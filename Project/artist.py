@@ -4,7 +4,7 @@ import urllib
 import json
 import spotipy
 import sys
-
+import collections
 
 def search_artist():
 #tror ej denna funktion kommer vara här i backenden men nu testas de bara lite
@@ -31,7 +31,7 @@ def find_artist_Id(req):
     for j in lista:
         artistId = j['id']
 
-        print
+        #print
         get_artist(artistId,req)
 
 def get_artist(artistId,req):
