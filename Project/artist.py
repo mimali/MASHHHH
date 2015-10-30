@@ -8,7 +8,7 @@ import sys
 
 def search_artist():
 #tror ej denna funktion kommer vara här i backenden men nu testas de bara lite
-    req = (raw_input(u'vilken artist vill du söka på? '))
+    #req = (raw_input(u'vilken artist vill du söka på? '))
     find_artist_Id(req)
 
 def find_artist_Id(req):
