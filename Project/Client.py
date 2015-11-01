@@ -19,8 +19,8 @@ def search_artist():
     artist = request.query.artist
     
     """
-    i den här funktionen får den ju då hämta spllistan från spotify,
-    länken till youtube, länken till spotify och kankse
+    i den här funktionen hämtas spellistan från spotify,
+    youtubelänken, spotifylänken och kanske
     en bild och artistens från apierna och returna. Frågan är hur den ska returna det
     som listor och dictionaries som är enkelt att översätta till json eller som helt
     vanlig text
@@ -45,6 +45,7 @@ def playlist(artist):
 """
 vi kanske ska lägga allt här nedanför i en egen pythonfil och kalla den klient
 och allt här ovanför, som routar apiet för backend
+mycket möjligt
 """
 
 @route("/static/<filepath:path>")
