@@ -6,16 +6,17 @@ import spotipy
 import sys
 import collections
 
-def search_artist():
+#def search_artist():
 #tror ej denna funktion kommer vara hÃ¤r i backenden men nu testas de bara lite
     #req = (raw_input(u'vilken artist vill du sÃ¶ka pÃ¥? '))
-    find_artist_Id(req)
+    #find_artist_Id()
 
-def find_artist_Id(req):
+def find_artist_Id(artist):
     """
     funktionern gör parametrar av queryn och gör ett jsonobjekt av det
     filtrerar jsonobjektet för att få ut L1, 
     """
+    req=artist
     url = "https://api.spotify.com/v1/search?"
     parameters = {'q' : req, 'type' : 'artist', 'limit' : '1', 'accept' : 'application/json'}
     response = urllib2.urlopen(url + urllib.urlencode(parameters))
@@ -31,9 +32,9 @@ def find_artist_Id(req):
     for j in lista:
         artistId = j['id']
 
-        #print
-        get_artist(artistId,req)
-
+    return grej
+        #print grej
+        #get_artist(artistId,req)
 def get_artist(artistId,req):
     """
     hÃ¤mtar den valda artistens top 10 låtar från spotify med hjälp av
@@ -123,6 +124,6 @@ def make_dict(Tracklist, Urllist, video_id, youtube_url, req):
         
     print playlist['songs'].keys()
     
-search_artist()
+#search_artist()
 
 
