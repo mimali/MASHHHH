@@ -9,7 +9,7 @@ HOST = "localhost"
 
 @route('/search')
 def search_artist():
-    
+    request.headers.get('Accept') == "application/json"
     response.set_header("Content-Type", "application/json")
     
     artist = request.query.artist
