@@ -4,6 +4,8 @@ from bottle import *
 from testbackend import skicka
 from spotifybackend import search_artist
 import json
+import urllib2
+import urllib
 HOST = "localhost"
 
 
@@ -26,15 +28,18 @@ def get_request1():
     ett tempalte med en rubrik som Ã¤r playlisten
     """
     req = request.forms.req
-    L1 = skicka(req)
-    get_request2(req)
 
-"""kan vi köra den funktionen efter utan fast än vi inte deffinierat req?
-Hur får vi med req i urln?
-"""
+    url = "http://localhost:8080/search?"
+    parameters = {'artist':req}
+    response = urllib2.urlopen(url + urllib.urlencode(parameters))
 
-@route('/playlist/<req>', method="POST")
-def get_request2(req):
+    json_obj = json.load(response)
+    grej = json_obj['artists']['items']
+    
+    get_request(grej)
+    
+@route('/playlist/', method="POST")
+def get_request2(grej):
     """
     hÃ¤mtar in svaret som anvÃ¤ndaren skrivier in i playlist och retunar ett 
     ett tempalte med en rubrik som Ã¤r playlisten
@@ -56,4 +61,4 @@ def start():
     """
     return template('index')
 
-run(host = HOST, port = 8080, debug=True,)
+run(host = HOST, port = 8081, debug=True,)
