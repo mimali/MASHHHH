@@ -30,7 +30,7 @@ def get_request1():
     req = request.forms.req
 
     url = "http://localhost:8080/search?"
-    parameters = {'artist':req}
+    parameters = {'artist':req, 'songs':yes}
     response = urllib2.urlopen(url + urllib.urlencode(parameters))
 
     json_obj = json.load(response)
