@@ -16,41 +16,11 @@ def search_artist():
     else:
         redirect ('/playlist/artist/'+ artist)
 
-<<<<<<< HEAD
+
 @route('/playlist/artist/<artist>')
 def playlist(artist):
 
     return str(find_artist_Id(artist))
 
-run(host = HOST, port = 8080, debug=True,)
-=======
-@route('/api/v1/search?artist=<req>/spotify/')
-def hejsan():
-    pass
-    
-
-@route('/api/v1/search?artist=<req>/youtube/')
-def hejsan2():
-    pass
-
-@route('/api/v1/search?artist=<req>/playlist/')
-def hejsan3():
-    pass
-
 run(host = HOST, port = 8081, debug=True,)
 
-"""
-i den här funktionen får den ju då hämta spllistan från spotify,
-länken till youtube, länken till spotify och kankse
-en bild och artistens från apierna och returna. Frågan är hur den ska returna det
-som listor och dictionaries som är enkelt att översätta till json eller som helt
-vanlig text
-"""
-"""
-queryn här ifrån sparas i artist som sedan söker i spotify och returnerar
-json, om man vill det eller ett template
-när man går till local host och anropar funktionen /search kan man skriva en
-quesry med ett ? och sedan skickar man in parametern som vi bestämmer i det
-här fallet artist.
-"""
->>>>>>> origin/master
