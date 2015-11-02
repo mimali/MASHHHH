@@ -22,5 +22,5 @@ def playlist(artist):
 
     return str(find_artist_Id(artist))
 
-run(host = HOST, port = 8081, debug=True,)
+run(host = HOST, port = 8080, debug=True,)
 
