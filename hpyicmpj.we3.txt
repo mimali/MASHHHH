@@ -1,0 +1,46 @@
+﻿Merge remote-tracking branch 'origin/master'
+
+Conflicts:
+	Project/spotifybackend.pyc
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 4 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   .gitignore
+#	modified:   Project/API.py
+#	renamed:    artist.py -> Project/artist.py
+#	new file:   Project/bottle.py
+#	deleted:    Project/spotifybackend.pyc
+#	modified:   Project/testbackend.pyc
+#	renamed:    README.md -> "\303\226vrigt/README.md"
+#	renamed:    artist(1).py -> "\303\226vrigt/artist(1).py"
+#	renamed:    lek.py -> "\303\226vrigt/lek.py"
+#	renamed:    oldTV.psd -> "\303\226vrigt/oldTV.psd"
+#	renamed:    python youtube -> "\303\226vrigt/python youtube"
+#	renamed:    pythonyoutube -> "\303\226vrigt/pythonyoutube"
+#	renamed:    searchID.py -> "\303\226vrigt/searchID.py"
+#	renamed:    smart2.py -> "\303\226vrigt/smart2.py"
+#	renamed:    test -> "\303\226vrigt/test"
+#	renamed:    test Youtube -> "\303\226vrigt/test Youtube"
+#
+# Changes not staged for commit:
+#	modified:   .gitignore
+#
+# Untracked files:
+#	1hfhuvam.2bt.txt
+#	ojuunc25.dik.txt
+#
+

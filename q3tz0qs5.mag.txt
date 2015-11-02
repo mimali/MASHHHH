@@ -1,0 +1,48 @@
+﻿Merge remote-tracking branch 'origin/master'
+
+Conflicts:
+	Project/spotifybackend.pyc
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 4 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   .gitignore
+#	new file:   1hfhuvam.2bt.txt
+#	modified:   Project/API.py
+#	deleted:    artist.py
+#	new file:   hpyicmpj.we3.txt
+#	new file:   ojuunc25.dik.txt
+#
+# Changes not staged for commit:
+#	deleted:    Project/spotifybackend.pyc
+#	modified:   Project/testbackend.pyc
+#	deleted:    README.md
+#	deleted:    artist(1).py
+#	deleted:    lek.py
+#	deleted:    oldTV.psd
+#	deleted:    python youtube
+#	deleted:    pythonyoutube
+#	deleted:    searchID.py
+#	deleted:    smart2.py
+#	deleted:    test
+#	deleted:    test Youtube
+#
+# Untracked files:
+#	Project/bottle.py
+#	rha52ota.zju.txt
+#	"\303\226vrigt/"
+#
+
