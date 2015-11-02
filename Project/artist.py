@@ -7,14 +7,14 @@ import sys
 import collections
 
 #def search_artist():
-#tror ej denna funktion kommer vara hÃ¤r i backenden men nu testas de bara lite
-    #req = (raw_input(u'vilken artist vill du sÃ¶ka pÃ¥? '))
+#tror ej denna funktion kommer vara hÃƒÂ¤r i backenden men nu testas de bara lite
+    #req = (raw_input(u'vilken artist vill du sÃƒÂ¶ka pÃƒÂ¥? '))
     #find_artist_Id()
 
 def find_artist_Id(artist):
     """
-    funktionern gör parametrar av queryn och gör ett jsonobjekt av det
-    filtrerar jsonobjektet för att få ut L1, 
+    funktionern gÃ¶r parametrar av queryn och gÃ¶r ett jsonobjekt av det
+    filtrerar jsonobjektet fÃ¶r att fÃ¥ ut L1, 
     """
     req=artist
     url = "https://api.spotify.com/v1/search?"
@@ -37,9 +37,9 @@ def find_artist_Id(artist):
         #get_artist(artistId,req)
 def get_artist(artistId,req):
     """
-    hÃ¤mtar den valda artistens top 10 låtar från spotify med hjälp av
-    spotipy och lägger till låtnamnen i en lista, Tracklist, och URLerna till
-    låtarna på spotify i en annan lista, Urllist.
+    hÃƒÂ¤mtar den valda artistens top 10 lÃ¥tar frÃ¥n spotify med hjÃ¤lp av
+    spotipy och lÃ¤gger till lÃ¥tnamnen i en lista, Tracklist, och URLerna till
+    lÃ¥tarna pÃ¥ spotify i en annan lista, Urllist.
     """
     Tracklist=[]
     Urllist = []
@@ -57,8 +57,8 @@ def get_artist(artistId,req):
     
 def find_video(Tracklist, req, Urllist):
     """
-    funktionen använder låttitlarna för att söka efter låtnamnens id tillsammans
-    med artistnamnt efter deras yputubeID. IDt används sedan för att göra en URL
+    funktionen anvÃ¤nder lÃ¥ttitlarna fÃ¶r att sÃ¶ka efter lÃ¥tnamnens id tillsammans
+    med artistnamnt efter deras yputubeID. IDt anvÃ¤nds sedan fÃ¶r att gÃ¶ra en URL
     till en youtubevideo. 
     """
     
@@ -87,30 +87,27 @@ def find_video(Tracklist, req, Urllist):
     
 def make_dict(Tracklist, Urllist, video_id, youtube_url, req):
     """
-    funktionen gör ett dictionarie med alla parametrar vi valt att skicka med.
+    funktionen gÃ¶r ett dictionarie med alla parametrar vi valt att skicka med.
     dictionarit heter "playlist" i det finns "artist" med artistnamnet och "songs"
-    med låttitlarna som också är dictionaaries. De innehåller en spotifylänk och
-    en youtubelänk.
+    med lÃ¥ttitlarna som ocksÃ¥ Ã¤r dictionaaries. De innehÃ¥ller en spotifylÃ¤nk och
+    en youtubelÃ¤nk.
     """
-    playlist=dict()
-    songs =dict()
+    print '\nOrderedDict:'
+    playlist = collections.OrderedDict()
+    songs = collections.OrderedDict( )
 
     playlist['songs'] = songs
     playlist['artist'] = req
 
-    print u'rätt ordning'
+    print u'rÃ¤tt ordning'
     print '*******************'
     for i in Tracklist:
         print i
     """
-    när den här foloopen körs så händer det någonting. Innan är Tracklist en lista
-    med låtarn i den ordningen de spelas på spotify men när den loopas, blir nycklar
-    i dictionariet och för värdena spotify och youtube blir den helt shufflad
-    låtarna är i en helt random ordning men videorna är i den ordningen som de finns på
-    spotify. varför blir det det?
+    NÃ¤r den hÃ¤r foorlopen kÃ¶rs blir det nu samma ordning som spotify's top 10 lÃ¥tare.  
     """
     print
-    print u'här blir det fel ordning! '
+    print u'hÃ¤r blir det rÃ¤tt ordning,igen! '
     print '********************************'
     for i in Tracklist:
         songs[i]={'spotify':'', 'Youtube': '',}
@@ -122,7 +119,7 @@ def make_dict(Tracklist, Urllist, video_id, youtube_url, req):
         playlist['songs'][i]['YoutubeID']=video_id[m]
         m = m + 1
         
-    print playlist['songs'].keys()
+    print playlist ['songs'].keys()
     
 #search_artist()
 
