@@ -21,17 +21,16 @@ def start():
     """
     return template('index')
 
-@route('/playlist', method="GET")
+@route('/playlist', method='POST')
 def get_request():
     """
     hÃ¤mtar in svaret som anvÃ¤ndaren skrivier in i playlist och retunar ett 
     ett tempalte med en rubrik som Ã¤r playlisten
     """
-    req = request.forms.req
-    print len(req)
+    req = request.forms.get('req')
 
     url = "http://localhost:8080/search?"
-    parameters = {'artist':req, 'accept' : 'application/json'}
+    parameters = {'artist':req, 'Accept' : 'application/json'}
     response = urllib2.urlopen(url + urllib.urlencode(parameters))
     
     return response
