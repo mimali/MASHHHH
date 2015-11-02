@@ -26,15 +26,18 @@ def search_artist(name=req):
 
 @route('/api/v1/search?artist=<req>/spotify/')
 def hejsan():
+    pass
     
 
 @route('/api/v1/search?artist=<req>/youtube/')
 def hejsan2():
+    pass
 
 @route('/api/v1/search?artist=<req>/playlist/')
 def hejsan3():
+    pass
 
-run(host = HOST, port = 8080, debug=True,)
+run(host = HOST, port = 8081, debug=True,)
 
 """
 i den här funktionen får den ju då hämta spllistan från spotify,
