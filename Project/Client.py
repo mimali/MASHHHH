@@ -21,7 +21,7 @@ def start():
     """
     return template('index')
 
-@route('/playlist', method="POST")
+@route('/playlist', method="GET")
 def get_request1():
     """
     hÃ¤mtar in svaret som anvÃ¤ndaren skrivier in i playlist och retunar ett 
@@ -30,24 +30,19 @@ def get_request1():
     req = request.forms.req
 
     url = "http://localhost:8080/search?"
-    parameters = {'artist':req, 'songs':yes}
+    parameters = {'artist':req, 'songs':'yes', 'youtube':'yes', 'accept' : 'application/json'}
     response = urllib2.urlopen(url + urllib.urlencode(parameters))
-
+    print response
+    
     json_obj = json.load(response)
-    grej = json_obj['artists']['items']
+    grej = json_obj
     
-    redirect ('/playlist/'+ grej)
-    
-    
-@route('/playlist/', method="POST")
-def get_request(grej):
-    """
-    hÃ¤mtar in svaret som anvÃ¤ndaren skrivier in i playlist och retunar ett 
-    ett tempalte med en rubrik som Ã¤r playlisten
-    """
-    req = request.forms.req
-    return template('playlist', req = L2)
+    print grej
+    #redirect ('/playlist/'+ grej)
 
+@route('/playlist/<grej>')
+def print_artist(grej):
+    pass
 '''
 @error(404)
 def error404(error):
