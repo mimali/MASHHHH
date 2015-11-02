@@ -42,6 +42,16 @@ artistnamnet ändras är det ändå centrerat i TVn.
     left: 70px;
 }
 
+#fel{
+    font-size: 80px;
+    text-align: center;
+    height: 100px;
+    width: 700px;
+    position: relative;
+    top: 160px;
+    left: 70px;
+}
+
 #search{
     font-size: 80px;
     text-align: center;
