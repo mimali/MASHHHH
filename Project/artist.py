@@ -6,17 +6,19 @@ import spotipy
 import sys
 import collections
 
-#def search_artist():
+"""
+def search_artist():
 #tror ej denna funktion kommer vara hÃ¤r i backenden men nu testas de bara lite
-    #req = (raw_input(u'vilken artist vill du sÃ¶ka pÃ¥? '))
-    #find_artist_Id()
-
+    req = (raw_input(u'vilken artist vill du sÃ¶ka pÃ¥? '))
+    find_artist_Id(req)
+"""
 def find_artist_Id(artist):
     """
     funktionern gör parametrar av queryn och gör ett jsonobjekt av det
     filtrerar jsonobjektet för att få ut L1, 
     """
-    req=artist
+    req = artist
+    print req
     url = "https://api.spotify.com/v1/search?"
     parameters = {'q' : req, 'type' : 'artist', 'limit' : '1', 'accept' : 'application/json'}
     response = urllib2.urlopen(url + urllib.urlencode(parameters))
@@ -32,9 +34,9 @@ def find_artist_Id(artist):
     for j in lista:
         artistId = j['id']
 
-    return grej
-        #print grej
-        #get_artist(artistId,req)
+    
+    return get_artist(artistId,req)
+
 def get_artist(artistId,req):
     """
     hÃ¤mtar den valda artistens top 10 låtar från spotify med hjälp av
@@ -53,7 +55,7 @@ def get_artist(artistId,req):
             Tracklist.append(track['name'])
             Urllist.append(track['preview_url'])      
             
-    find_video (Tracklist, req, Urllist)        
+    return find_video (Tracklist, req, Urllist)        
     
 def find_video(Tracklist, req, Urllist):
     """
@@ -83,7 +85,7 @@ def find_video(Tracklist, req, Urllist):
        youtube_url.append(compyoutubeURL)
 
     
-    make_dict(Tracklist, Urllist, video_id, youtube_url, req)
+    return make_dict(Tracklist, Urllist, video_id, youtube_url, req)
     
 def make_dict(Tracklist, Urllist, video_id, youtube_url, req):
     """
@@ -92,23 +94,12 @@ def make_dict(Tracklist, Urllist, video_id, youtube_url, req):
     med låttitlarna som också är dictionaaries. De innehåller en spotifylänk och
     en youtubelänk.
     """
-    print '\nOrderedDict:'
     playlist = collections.OrderedDict()
     songs = collections.OrderedDict( )
 
     playlist['songs'] = songs
     playlist['artist'] = req
 
-    print u'rätt ordning'
-    print '*******************'
-    for i in Tracklist:
-        print i
-    """
-    När den här foorlopen körs blir det nu samma ordning som spotify's top 10 låtare.  
-    """
-    print
-    print u'här blir det rätt ordning,igen! '
-    print '********************************'
     for i in Tracklist:
         songs[i]={'spotify':'', 'Youtube': '',}
         
@@ -119,8 +110,9 @@ def make_dict(Tracklist, Urllist, video_id, youtube_url, req):
         playlist['songs'][i]['YoutubeID']=video_id[m]
         m = m + 1
         
-    print playlist ['songs'].keys()
+     #playlist ['songs'].keys()
     
-#search_artist()
+    return playlist
+
 
 
