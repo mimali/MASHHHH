@@ -36,10 +36,11 @@ def get_request1():
     json_obj = json.load(response)
     grej = json_obj['artists']['items']
     
-    get_request(grej)
+    redirect ('/playlist/'+ grej)
+    
     
 @route('/playlist/', method="POST")
-def get_request2(grej):
+def get_request(grej):
     """
     hÃ¤mtar in svaret som anvÃ¤ndaren skrivier in i playlist och retunar ett 
     ett tempalte med en rubrik som Ã¤r playlisten
