@@ -107,6 +107,7 @@ def make_dict(Tracklist, Urllist, video_id, youtube_url, req):
         playlist['songs'][i]['spotify']=Urllist[m]
         playlist['songs'][i]['Youtube']=youtube_url[m]
         playlist['songs'][i]['YoutubeID']=video_id[m]
+        playlist['songs'][i]['titel']=Tracklist[m]
         m = m + 1
         
      #playlist ['songs'].keys()

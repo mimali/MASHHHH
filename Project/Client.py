@@ -46,6 +46,7 @@ def get_request():
         fel = "Ajjdå, något gick fel, kan bero på teckenkodning eller att artisten inte har 10 musikvideor"
         return template('error', fel= fel)
     """
+    return json_obj
     songs =[]
     
     for i in json_obj['songs']:
