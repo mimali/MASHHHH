@@ -94,20 +94,20 @@ def make_dict(Tracklist, Urllist, video_id, youtube_url, req):
     en youtubelänk.
     """
     playlist = collections.OrderedDict()
-    songs = collections.OrderedDict( )
+    songs = []
 
     playlist['songs'] = songs
     playlist['artist'] = req
 
-    for i in Tracklist:
-        songs[i]={'spotify':'', 'Youtube': '',}
+    
         
     m = 0
-    for i in playlist['songs']:
-        playlist['songs'][i]['spotify']=Urllist[m]
-        playlist['songs'][i]['Youtube']=youtube_url[m]
-        playlist['songs'][i]['YoutubeID']=video_id[m]
-        playlist['songs'][i]['titel']=Tracklist[m]
+    for i in Tracklist:
+        playlist['songs'].append({})
+        playlist['songs'][m]['spotify']=Urllist[m]
+        playlist['songs'][m]['Youtube']=youtube_url[m]
+        playlist['songs'][m]['YoutubeID']=video_id[m]
+        playlist['songs'][m]['titel']=Tracklist[m]
         m = m + 1
         
      #playlist ['songs'].keys()

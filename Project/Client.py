@@ -46,20 +46,18 @@ def get_request():
         fel = "Ajjdå, något gick fel, kan bero på teckenkodning eller att artisten inte har 10 musikvideor"
         return template('error', fel= fel)
     """
-    return json_obj
     songs =[]
-    
     for i in json_obj['songs']:
-        songs.append(i)
-        #print i
-
-    """
-    youtube = []
+        #songs.append(i['titel'])
+        print i['titel']
+        
+    youtube=[]
     for i in json_obj['songs']:
-        json_obj[i]['Youtube']
-    """
-    
-    return template('playlist', req=req, songs=songs)
+        #youtube.append(i['Youtube'])
+        print i['Youtube']
+        
+    return songs, youtube
+    #return template('playlist', req=req, songs=songs)
         
 """
 @route('/playlist/<req>')
