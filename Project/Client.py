@@ -71,6 +71,12 @@ def error404(error):
     fel = "Sidan hittades inte "
     return template('felmeddelande', fel = fel)
 
+@error(500)
+def error404(error):
+    """felmeddelande för 500"""
+    fel = "Serverfel "
+    return template('felmeddelande', fel = fel)
+
 
 @route('/artistname')
 def start(): 
