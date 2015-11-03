@@ -52,10 +52,9 @@ def get_request():
         
     youtube=[]
     for i in json_obj['songs']:
-        #youtube.append(i['Youtube'])
-        print i['Youtube']
+        youtube.append(i['Youtube'])
         
-    return template('playlist', req=req, songs=songs)
+    return template('playlist', req=req, songs=songs, Youtube=youtube)
         
 """
 @route('/playlist/<req>')
