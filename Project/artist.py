@@ -5,7 +5,8 @@ import json
 import spotipy
 import sys
 import collections
-
+reload(sys)
+sys.setdefaultencoding("utf-8")
 """
 def search_artist():
 #tror ej denna funktion kommer vara hÃ¤r i backenden men nu testas de bara lite
@@ -18,11 +19,9 @@ def find_artist_Id(artist):
     filtrerar jsonobjektet för att få ut L1, 
     """
     req = artist
-    print req
     url = "https://api.spotify.com/v1/search?"
-    parameters = {'q' : req, 'type' : 'artist', 'limit' : '1', 'accept' : 'application/json'}
+    parameters = {'q' : req, 'type' : 'artist', 'limit' : '1', 'Accept' : 'application/json'}
     response = urllib2.urlopen(url + urllib.urlencode(parameters))
-
     json_obj = json.load(response)
     grej = json_obj['artists']['items']
     lista=[]
@@ -67,23 +66,23 @@ def find_video(Tracklist, req, Urllist):
     url = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyB75saer8m5Cdp-w6CfrA9cGGm4BlgikX0&part=snippet&'
     video_id = []
     youtube_url = []
-    
+    print Tracklist
     for track in Tracklist:
         parameters ={'order' : 'viewCount','q': req + track, 'type' : 'video', 'maxResults': '1' , 'topicId' : 'Music video'}
         url_serch = url + urllib.urlencode(parameters)
         json_obj = urllib2.urlopen(url_serch)
         
         data = json.load(json_obj)
-        movie_id=data['items'][0]['id']['videoId']
-        
-        video_id.append(movie_id)   
+        movie_id=data['items'][0]['id']['videoId']    
+        video_id.append(movie_id)
+
 
     for movie_id in video_id:
        youtubeurl = 'https://www.youtube.com/watch?'
        parameters2 = {'v' : movie_id}
        compyoutubeURL= youtubeurl + urllib.urlencode(parameters2)
        youtube_url.append(compyoutubeURL)
-
+    
     
     return make_dict(Tracklist, Urllist, video_id, youtube_url, req)
     

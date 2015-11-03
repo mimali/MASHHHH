@@ -4,6 +4,8 @@ from bottle import *
 from artist import find_artist_Id
 import json
 import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
 HOST = "localhost"
 
 

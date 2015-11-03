@@ -6,6 +6,9 @@ from spotifybackend import search_artist
 import json
 import urllib2
 import urllib
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
 HOST = "localhost"
 
 
@@ -24,14 +27,15 @@ def start():
 @route('/playlist', method='POST')
 def get_request():
     """
-    hÃ¤mtar in svaret som anvÃ¤ndaren skrivier in i playlist och retunar ett 
-    ett tempalte med en rubrik som Ã¤r playlisten
+    hämtar in svaret som användaren skrivier in i playlist och retunar ett 
+    ett tempalte med en rubrik som är playlisten
     """
-    req = request.forms.get('req')
-
-    url = "http://localhost:8080/search?"
-    parameters = {'artist':req, 'Accept' : 'application/json'}
-    response = urllib2.urlopen(url + urllib.urlencode(parameters))
+    artist = request.forms.get('req')
+    url = 'http://localhost:8080/search?'
+    parameters = {'artist':artist, 'Accept':'application/json'}
+    apa = urllib.urlencode(parameters)
+    response = urllib2.urlopen(url + apa)
+    
     
     return response
     #redirect ('/playlist/'+ grej)
