@@ -58,7 +58,7 @@ def get_request():
             print ['Youtube']
     """
     
-    return template('playlist', req=req)
+    return template('playlist', req=req, songs=songs)
         
 """
 @route('/playlist/<req>')
