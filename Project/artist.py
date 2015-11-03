@@ -9,14 +9,14 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 """
 def search_artist():
-#tror ej denna funktion kommer vara hÃƒÂ¤r i backenden men nu testas de bara lite
-    req = (raw_input(u'vilken artist vill du sÃƒÂ¶ka pÃƒÂ¥? '))
+#tror ej denna funktion kommer vara hÃ¤r i backenden men nu testas de bara lite
+    req = (raw_input(u'vilken artist vill du sÃ¶ka pÃ¥? '))
     find_artist_Id(req)
 """
 def find_artist_Id(artist):
     """
-    funktionern gÃ¶r parametrar av queryn och gÃ¶r ett jsonobjekt av det
-    filtrerar jsonobjektet fÃ¶r att fÃ¥ ut L1, 
+    funktionern gör parametrar av queryn och gör ett jsonobjekt av det
+    filtrerar jsonobjektet för att få ut L1, 
     """
     req = artist
     url = "https://api.spotify.com/v1/search?"
@@ -38,9 +38,9 @@ def find_artist_Id(artist):
 
 def get_artist(artistId,req):
     """
-    hÃƒÂ¤mtar den valda artistens top 10 lÃ¥tar frÃ¥n spotify med hjÃ¤lp av
-    spotipy och lÃ¤gger till lÃ¥tnamnen i en lista, Tracklist, och URLerna till
-    lÃ¥tarna pÃ¥ spotify i en annan lista, Urllist.
+    hÃ¤mtar den valda artistens top 10 låtar från spotify med hjälp av
+    spotipy och lägger till låtnamnen i en lista, Tracklist, och URLerna till
+    låtarna på spotify i en annan lista, Urllist.
     """
     Tracklist=[]
     Urllist = []
@@ -58,8 +58,8 @@ def get_artist(artistId,req):
     
 def find_video(Tracklist, req, Urllist):
     """
-    funktionen anvÃ¤nder lÃ¥ttitlarna fÃ¶r att sÃ¶ka efter lÃ¥tnamnens id tillsammans
-    med artistnamnt efter deras yputubeID. IDt anvÃ¤nds sedan fÃ¶r att gÃ¶ra en URL
+    funktionen använder låttitlarna för att söka efter låtnamnens id tillsammans
+    med artistnamnt efter deras yputubeID. IDt används sedan för att göra en URL
     till en youtubevideo. 
     """
     
@@ -88,10 +88,10 @@ def find_video(Tracklist, req, Urllist):
     
 def make_dict(Tracklist, Urllist, video_id, youtube_url, req):
     """
-    funktionen gÃ¶r ett dictionarie med alla parametrar vi valt att skicka med.
+    funktionen gör ett dictionarie med alla parametrar vi valt att skicka med.
     dictionarit heter "playlist" i det finns "artist" med artistnamnet och "songs"
-    med lÃ¥ttitlarna som ocksÃ¥ Ã¤r dictionaaries. De innehÃ¥ller en spotifylÃ¤nk och
-    en youtubelÃ¤nk.
+    med låttitlarna som också är dictionaaries. De innehåller en spotifylänk och
+    en youtubelänk.
     """
     playlist = collections.OrderedDict()
     songs = collections.OrderedDict( )
@@ -112,6 +112,3 @@ def make_dict(Tracklist, Urllist, video_id, youtube_url, req):
      #playlist ['songs'].keys()
     
     return playlist
-
-
-

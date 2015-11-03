@@ -42,20 +42,22 @@ def get_request():
     response = urllib2.urlopen(url + urllib.urlencode(parameters))
     json_obj = json.load(response)
 
+
     """
     except:
         fel = "Ajjdå, något gick fel, kan bero på teckenkodning eller att artisten inte har 10 musikvideor"
         return template('error', fel= fel)
     """
     songs =[]
+    
     for i in json_obj['songs']:
         songs.append(i)
+        #print i
 
     """
     youtube = []
     for i in json_obj['songs']:
-        for j in i:
-            print ['Youtube']
+        json_obj[i]['Youtube']
     """
     
     return template('playlist', req=req, songs=songs)
