@@ -7,6 +7,10 @@ Project/artist.py
 *.pyc
 Project/artist.py
 Övrigt/oldTV.psd
+<<<<<<< HEAD
 Project/spotifybackend.pyc
 Project/spotifybackend.pyc
 Project/testbackend.pyc
+=======
+Project/spotifybackend.pyc
+>>>>>>> origin/master
