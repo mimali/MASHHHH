@@ -100,4 +100,7 @@ form input[type="text"] {
     font-size: 13px;
     font-weight: bold;
 }
+#filmlista:first-child{
+    padding-bottom: 50px;
 
+}
