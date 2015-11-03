@@ -30,8 +30,6 @@ def get_request():
     hämtar in svaret som användaren skrivier in i playlist och retunar ett 
     ett tempalte med en rubrik som är playlisten
     """
-    global songs
-    global youtube
     
     req = request.forms.get('req')
     """
