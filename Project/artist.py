@@ -33,7 +33,6 @@ def find_artist_Id(artist):
     for j in lista:
         artistId = j['id']
 
-    
     return get_artist(artistId,req)
 
 def get_artist(artistId,req):
@@ -68,13 +67,22 @@ def find_video(Tracklist, req, Urllist):
     youtube_url = []
     print Tracklist
     for track in Tracklist:
-        parameters ={'order' : 'viewCount','q': req + track, 'type' : 'video', 'maxResults': '1' , 'topicId' : 'Music video'}
-        url_serch = url + urllib.urlencode(parameters)
-        json_obj = urllib2.urlopen(url_serch)
+        try:
+            parameters ={'order' : 'viewCount','q': req + track, 'type' : 'video', 'maxResults': '1' , 'topicId' : 'Music video'}
+            url_serch = url + urllib.urlencode(parameters)
+            json_obj = urllib2.urlopen(url_serch)
         
-        data = json.load(json_obj)
-        movie_id=data['items'][0]['id']['videoId']    
-        video_id.append(movie_id)
+            data = json.load(json_obj)
+            movie_id=data['items'][0]['id']['videoId']    
+            video_id.append(movie_id)
+        except:
+            parameters ={'order' : 'viewCount','q': 'What does the fox say', 'type' : 'video', 'maxResults': '1' , 'topicId' : 'Music video'}
+            url_serch = url + urllib.urlencode(parameters)
+            json_obj = urllib2.urlopen(url_serch)
+        
+            data = json.load(json_obj)
+            movie_id=data['items'][0]['id']['videoId']    
+            video_id.append(movie_id)
 
 
     for movie_id in video_id:

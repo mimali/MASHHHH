@@ -79,11 +79,13 @@ form input[type="text"] {
 }
 
 #video{
+    list-style: none;
+    padding: 0px;
     height: 362px;
     width: 442px;
     position: relative;
-    top: 115px;
-    left: 105px;
+    top: 100px;
+    left: 74px;
     
 }
 
@@ -94,13 +96,16 @@ form input[type="text"] {
     top: -369px;
 
 }
-
+.movies {
+    margin-bottom: 150px;
+}
 #list{
     list-style: none;
     font-size: 13px;
     font-weight: bold;
 }
-#filmlista:first-child{
-    padding-bottom: 50px;
+#filmlist:first-of-type{
+    list-style: none;
+    margin-bottom: 150px;
 
 }
