@@ -7,7 +7,9 @@
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js">
+    $(selector).click(function)
+    </script>
 
 </script>
 
@@ -25,8 +27,8 @@
 			</div>
 			<div id="playlist">
 				<ul id="list">
-					%for name in songs:
-					<li> <a Href="/wiki/{{songs}}"> {{songs}} </a> </li>
+					%for title in songs:
+					<li> <a Href= {{Youtube}}> {{title}} </a> </li>
 					%end
 				<ul>
 			</div>
