@@ -11,7 +11,7 @@ body{
 Svart bakgrund på playlist templatet
 */
 #TVn{
-	background: url(oldTV.png) no-repeat center center;
+	background: url(oldTV.png) repeat center center;
     color: white;
 	text-align:center;
 
@@ -97,9 +97,9 @@ form input[type="text"] {
 
 }
 .movies {
-    margin-bottom: 150px;
+    margin-bottom: 200px;
 }
-#list{
+#playlist;ul;li{
     list-style: none;
     font-size: 13px;
     font-weight: bold;
