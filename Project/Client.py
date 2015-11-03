@@ -7,6 +7,8 @@ import json
 import urllib2
 import urllib
 HOST = "localhost"
+songs = []
+youtube = []
 
 
 @route("/static/<filepath:path>")
@@ -27,18 +29,34 @@ def get_request():
     hÃ¤mtar in svaret som anvÃ¤ndaren skrivier in i playlist och retunar ett 
     ett tempalte med en rubrik som Ã¤r playlisten
     """
+    global songs
+    global youtube
+    
     req = request.forms.get('req')
 
     url = "http://localhost:8080/search?"
     parameters = {'artist':req, 'Accept' : 'application/json'}
     response = urllib2.urlopen(url + urllib.urlencode(parameters))
+    json_obj = json.load(response)
     
-    return response
-    #redirect ('/playlist/'+ grej)
+    songs =[]
+    for i in json_obj['songs']:
+        songs.append(i)
+    """
+    youtube = []
+    for i in json_obj['songs']:
+        for j in i:
+            print ['Youtube']
+    """
+    redirect('/playlist/'+ req)
+        
 
-@route('/playlist/<grej>')
-def print_artist(grej):
-    pass
+@route('/playlist/<req>')
+def print_artist(req):
+    global songs
+    global youtube
+    
+    return template('playlist')
 
 @error(404)
 def error404(error):
