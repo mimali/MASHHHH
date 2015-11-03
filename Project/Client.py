@@ -35,30 +35,24 @@ def get_request():
     global songs
     global youtube
     
-    try:
-        req = request.forms.get('req')
+    req = request.forms.get('req')
 
-        url = "http://localhost:8080/search?"
-        parameters = {'artist':req, 'Accept' : 'application/json'}
-        response = urllib2.urlopen(url + urllib.urlencode(parameters))
-        json_obj = json.load(response)
-        
-        songs =[]
-        for i in json_obj['songs']:
-            songs.append(i)
+    url = "http://localhost:8080/search?"
+    parameters = {'artist':req, 'Accept' : 'application/json'}
+    response = urllib2.urlopen(url + urllib.urlencode(parameters))
+    json_obj = json.load(response)
+    
+    songs =[]
+    for i in json_obj['songs']:
+        songs.append(i)
 
-        """
-        youtube = []
-        for i in json_obj['songs']:
-            for j in i:
-                print ['Youtube']
-        """
-        redirect('/playlist/'+ req)
-
-    except:
-        fel = "Ajjdå, något gick fel, kan bero på teckenkodning eller att artisten inte har 10 musikvideor"
-        return template('error', fel= fel)
-        
+    """
+    youtube = []
+    for i in json_obj['songs']:
+        for j in i:
+            print ['Youtube']
+    """
+    redirect('/playlist/'+ req)
         
 
 @route('/playlist/<req>')
