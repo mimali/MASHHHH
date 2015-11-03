@@ -49,8 +49,7 @@ def get_request():
     """
     youtube = []
     for i in json_obj['songs']:
-        for j in i:
-            print ['Youtube']
+        youtube.append([i][Youtube])
     """
     redirect('/playlist/'+ req)
         
@@ -59,8 +58,9 @@ def get_request():
 def print_artist(req):
     global songs
     global youtube
+    print songs
     
-    return template('playlist')
+    return template('playlist', req=req)
 
 @error(404)
 def error404(error):
