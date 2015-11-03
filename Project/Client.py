@@ -10,8 +10,6 @@ import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
 HOST = "localhost"
-songs = []
-youtube = []
 
 
 @route("/static/<filepath:path>")
@@ -59,10 +57,10 @@ def get_request():
         for j in i:
             print ['Youtube']
     """
-    redirect('/playlist/'+ req)
-
+    
+    return template('playlist', req=req)
         
-
+"""
 @route('/playlist/<req>')
 def print_artist(req):
     global songs
@@ -70,7 +68,7 @@ def print_artist(req):
     print songs
     
     return template('playlist', req=req)
-
+"""
 @error(404)
 def error404(error):
     """felmeddelande för 404"""
