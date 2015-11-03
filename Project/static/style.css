@@ -1,6 +1,7 @@
 body{
     font-family: Helvetica, Verdana, Arial, sans-serif;
 	background-color: #FFF;
+    list-style: none;
 
 }
 #wrapper{
@@ -11,7 +12,7 @@ body{
 Svart bakgrund på playlist templatet
 */
 #TVn{
-	background: url(oldTV.png) repeat center center;
+	background: url(oldTV.png) no-repeat center center;
     color: white;
 	text-align:center;
 
@@ -26,23 +27,10 @@ Svart bakgrund på playlist templatet
     width: 1050px;
 }
 /*
-alla divarna com är i TVn, rubriken, searchfältet och viedon
-behövere vara lika breda. De måste vara positionerade på samma ställe 
-och texten innuti måste vara centrerad. Så att även om texten i, typ 
-artistnamnet ändras är det ändå centrerat i TVn.
+Under här är alla divana som är i TVn
 */
 
 #rubrik{
-    font-size: 80px;
-    text-align: center;
-    height: 100px;
-    width: 700px;
-    position: relative;
-    top: 160px;
-    left: 70px;
-}
-
-#fel{
     font-size: 80px;
     text-align: center;
     height: 100px;
@@ -82,7 +70,7 @@ form input[type="text"] {
     list-style: none;
     padding: 0px;
     height: 362px;
-    width: 442px;
+    width: 700px;
     position: relative;
     top: 100px;
     left: 74px;
@@ -90,22 +78,31 @@ form input[type="text"] {
 }
 
 #playlist{
+    background-color: pink;
     color: black;
+    height: 250px;
+    width: 180px;
     position: relative;
-    left: 385px;
-    top: -369px;
+    left: 800px;
+    top: -350px;
 
 }
 .movies {
     margin-bottom: 200px;
 }
-#playlist;ul;li{
+
+#playlist;ul{
     list-style: none;
     font-size: 13px;
     font-weight: bold;
 }
-#filmlist:first-of-type{
-    list-style: none;
-    margin-bottom: 150px;
 
+#fel{
+    font-size: 20px;
+    text-align: center;
+    height: 100px;
+    width: 700px;
+    position: relative;
+    top: 160px;
+    left: 70px;
 }

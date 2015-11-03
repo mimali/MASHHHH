@@ -64,7 +64,7 @@ def print_artist(req):
     print songs
     
     return template('playlist', req=req)
-"""5
+"""
 @error(404)
 def error404(error):
     """felmeddelande för 404"""
