@@ -88,10 +88,15 @@ form input[type="text"] {
 
 }
 .movies {
-    margin-bottom: 200px;
+    margin-bottom: 340px;
 }
+#list{   
+	list-style: none;
+    font-size: 13px;
+    font-weight: bold;
 
-#playlist;ul{
+}
+#playlist{
     list-style: none;
     font-size: 13px;
     font-weight: bold;
