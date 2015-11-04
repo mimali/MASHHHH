@@ -1,0 +1,115 @@
+body{
+    font-family: Helvetica, Verdana, Arial, sans-serif;
+	background-color: #FFF;
+    list-style: none;
+
+}
+
+#wrapper{
+	height: 100%;
+	width: 95%;
+}
+
+/*
+Svart bakgrund på playlist templatet
+*/
+
+#TVn{
+	background: url(oldTV.png) no-repeat center center;
+    color: white;
+	text-align:center;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    margin: auto;
+    margin-top: 10px;
+    height: 700px;
+    width: 1050px;
+}
+/*
+Under här är alla divana som är i TVn
+*/
+
+#rubrik{
+    font-size: 80px;
+    text-align: center;
+    height: 100px;
+    width: 700px;
+    position: relative;
+    top: 160px;
+    left: 70px;
+}
+
+#search{
+    font-size: 80px;
+    text-align: center;
+    position: relative;
+    height: 200px;
+    width: 700px;
+    top: 160px;
+    left: 70px;
+}
+
+form input[type="text"] {
+    font-size: 50px;
+    height: 80px;
+    width: 500px;
+    font-family: Helvetica, Verdana, Arial, sans-serif;
+}
+
+#artist{
+    text-align: center;
+    position: relative;
+    height: 30px;
+    width: 700px;
+    top: 100px;
+    left: 75px;
+}
+
+#video{
+    list-style: none;
+    padding: 0px;
+    height: 362px;
+    width: 700px;
+    position: relative;
+    top: 100px;
+    left: 58px;
+    
+}
+.movies {
+    list-style: none;
+    margin-bottom: 340px;
+}
+
+#list{   
+	list-style: none;
+    font-size: 11px;
+    font-weight: bold;
+    color: green;
+
+}
+
+#playlist{
+    list-style: none;
+    font-size: 13px;
+    font-weight: bold;
+    position: relative;
+    width: 179px;
+    height: 283px;
+    left: 77%;
+    top: -54%;
+    margin-bottom: 340px;
+}
+
+#fel{
+    font-size: 10px;
+    text-align: center;
+    height: 100px;
+    width: 700px;
+    position: relative;
+    top: 160px;
+    left: 70px;
+}

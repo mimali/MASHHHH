@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>Spotitube</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js">
+    </script>
+
+</script>
+
+</head>
+<body>
+	<div id ="wrapper">
+		<div id="TVn">
+			
+			<div id="artist">
+				<h2>{{req}}</h2>
+
+			</div>		
+			<div id="video">
+				<ul id="filmlist">
+					%for id in youtube:
+					<li class="movies"> <iframe width="640" height="360" src="https://www.youtube.com/embed/{{id}}" frameborder="0" allowfullscreen id="film"></iframe> </li>
+					%end
+				<ul>
+			</div>
+			<div id="playlist">
+				<ul id="list">
+					%for title in songs:
+					<li>{{title}}</li>
+					<p></p>
+					%end
+				<ul>
+			</div>
+		</div>
+		<div id="TVn"></div>
+		<div id="TVn"></div>
+		<div id="TVn"></div>
+		<div id="TVn"></div>
+		<div id="TVn"></div>
+		<div id="TVn"></div>
+		<div id="TVn"></div>
+		<div id="TVn"></div>
+		<div id="TVn"></div>
+	</div>
+</body>
+</html>
