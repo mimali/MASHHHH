@@ -4,13 +4,16 @@ body{
     list-style: none;
 
 }
+
 #wrapper{
 	height: 100%;
 	width: 95%;
 }
+
 /*
 Svart bakgrund på playlist templatet
 */
+
 #TVn{
 	background: url(oldTV.png) no-repeat center center;
     color: white;
@@ -102,7 +105,7 @@ form input[type="text"] {
 }
 
 #fel{
-    font-size: 20px;
+    font-size: 10px;
     text-align: center;
     height: 100px;
     width: 700px;

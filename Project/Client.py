@@ -32,43 +32,32 @@ def get_request():
     """
     
     req = request.forms.get('req')
-    """
+
     try:
-    """ 
-    url = "http://localhost:8080/search?"
-    parameters = {'artist':req, 'Accept' : 'application/json'}
-    response = urllib2.urlopen(url + urllib.urlencode(parameters))
-    json_obj = json.load(response)
+        url = "http://localhost:8080/search?"
+        parameters = {'artist':req, 'Accept' : 'application/json'}
+        response = urllib2.urlopen(url + urllib.urlencode(parameters))
+        json_obj = json.load(response)
 
+        songs =[]
+        for i in json_obj['songs']:
+            songs.append(i['titel'])
+        
+        youtube=[]
+        for i in json_obj['songs']:
+            youtube.append(i['YoutubeID'])
 
-    """
+        spotify=[]
+        for i in json_obj['songs']:
+            spotify.append(i['spotify'])
+        
+        return template('playlist', req=req, songs=songs, youtube=youtube, spotify=spotify)
+
     except:
-        fel = "Ajjdå, något gick fel, kan bero på teckenkodning eller att artisten inte har 10 musikvideor"
-        return template('error', fel= fel)
-    """
-    songs =[]
-    for i in json_obj['songs']:
-        songs.append(i['titel'])
-        
-    youtube=[]
-    for i in json_obj['songs']:
-        youtube.append(i['YoutubeID'])
+        fel = "Tyvärr! Den valda artisten har ingen tillgänglig musikvideo"
+        return template('error', fel=fel)
 
-    spotify=[]
-    for i in json_obj['songs']:
-        spotify.append(i['spotify'])
-        
-    return template('playlist', req=req, songs=songs, youtube=youtube, spotify=spotify)
-        
-"""
-@route('/playlist/<req>')
-def print_artist(req):
-    global songs
-    global youtube
-    print songs
-    
-    return template('playlist', req=req)
-"""
+
 @error(404)
 def error404(error):
     """felmeddelande för 404"""
