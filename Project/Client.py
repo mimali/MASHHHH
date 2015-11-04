@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from bottle import *
-from testbackend import skicka
-from spotifybackend import search_artist
 import json
 import urllib2
 import urllib

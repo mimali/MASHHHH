@@ -57,9 +57,7 @@ def get_artist(artistId,req):
     
 def find_video(Tracklist, req, Urllist):
     """
-    funktionen använder låttitlarna för att söka efter låtnamnens id tillsammans
-    med artistnamnt efter deras yputubeID. IDt används sedan för att göra en URL
-    till en youtubevideo. 
+    funktionen använder låttitlarna för att söka efter  
     """
     
     url = 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyB75saer8m5Cdp-w6CfrA9cGGm4BlgikX0&part=snippet&'
@@ -67,6 +65,7 @@ def find_video(Tracklist, req, Urllist):
     youtube_url = []
     print Tracklist
     for track in Tracklist:
+        
         try:
             parameters ={'order' : 'relevance','q': req + track + 'music video', 'type' : 'video', 'maxResults': '1' , 'videoCategoryId' : 'Music'}
             url_serch = url + urllib.urlencode(parameters)

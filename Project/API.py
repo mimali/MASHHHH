@@ -8,6 +8,11 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 HOST = "localhost"
 
+'''
+Här hämtar vårt API data från Youtubes-API & Spotifys-API. Artist representerar sök q som används
+för att få fram den önskade artistens top tio låtar & musikvideo.
+Svaret return response kan visas upp i JSON & XML.
+'''
 
 @route('/search')
 def search_artist():
