@@ -73,33 +73,32 @@ form input[type="text"] {
     width: 700px;
     position: relative;
     top: 100px;
-    left: 74px;
+    left: 58px;
     
 }
-
-#playlist{
-    background-color: pink;
-    color: black;
-    height: 250px;
-    width: 180px;
-    position: relative;
-    left: 800px;
-    top: -350px;
-
-}
 .movies {
+    list-style: none;
     margin-bottom: 340px;
 }
+
 #list{   
 	list-style: none;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: bold;
+    color: green;
 
 }
+
 #playlist{
     list-style: none;
     font-size: 13px;
     font-weight: bold;
+    position: relative;
+    width: 179px;
+    height: 283px;
+    left: 77%;
+    top: -54%;
+    margin-bottom: 340px;
 }
 
 #fel{
