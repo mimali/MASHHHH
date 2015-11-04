@@ -68,7 +68,7 @@ def find_video(Tracklist, req, Urllist):
     print Tracklist
     for track in Tracklist:
         try:
-            parameters ={'order' : 'viewCount','q': req + track, 'type' : 'video', 'maxResults': '1' , 'topicId' : 'Music video'}
+            parameters ={'order' : 'relevance','q': req + track + 'music video', 'type' : 'video', 'maxResults': '1' , 'videoCategoryId' : 'Music'}
             url_serch = url + urllib.urlencode(parameters)
             json_obj = urllib2.urlopen(url_serch)
         

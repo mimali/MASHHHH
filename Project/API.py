@@ -24,4 +24,4 @@ def search_artist():
         response.set_header("Content-Type", "application/json")
     return response
 
-run(host = HOST, port = 8080, debu=True,)
+run(host = HOST, port = 8080, debug=True,)
